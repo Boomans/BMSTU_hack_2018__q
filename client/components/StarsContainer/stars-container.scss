@@ -1,0 +1,59 @@
+@import "../../src/const/const";
+
+$timeMax: 10;
+$timeMin: 4;
+$max: 30;
+$size: 2px;
+
+@mixin printStars(){
+  @for $i from 1 through $max {
+    .stars--#{$i} {
+      width: $size;
+      height: $size;
+      border-radius: $size;
+      top: percentage(random());
+      left: percentage(random());
+      transform: scale(2, 2);
+      -webkit-animation: star-blink (random($timeMax) + $timeMin) + s linear infinite;
+      animation: star-blink (random($timeMax) + $timeMin) + s linear infinite;
+    }
+  }
+}
+
+@-webkit-keyframes star-blink {
+  0% { background-color: $color-transparent;}
+  20% { background-color: $color-star;}
+  40% { background-color: $color-transparent;}
+  60% { background-color: $color-star;}
+  70% { background-color: $color-transparent;}
+  80% { background-color: $color-star;}
+  100% { background-color: $color-transparent;}
+}
+
+@keyframes star-blink {
+  0% { background-color: $color-transparent;}
+  20% { background-color: $color-star;}
+  40% { background-color: $color-transparent;}
+  60% { background-color: $color-star;}
+  70% { background-color: $color-transparent;}
+  80% { background-color: $color-star;}
+  100% { background-color: $color-transparent;}
+}
+
+.stars-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .stars {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  @include printStars;
+}

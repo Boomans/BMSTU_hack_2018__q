@@ -1,0 +1,27 @@
+@mixin anim-blink($colorMin, $colorMax, $time) {
+  .blink-container {
+    -webkit-animation: blink $time linear infinite;
+    animation: blink $time linear infinite;
+    color: $colorMax;
+  }
+
+  @-webkit-keyframes blink {
+    0% { color: $colorMax;}
+    10% {color: $colorMin;}
+    14% {color: $colorMax;}
+    18% {color: $colorMin;}
+    20% {color: $colorMax;}
+    50% { color: $colorMin;}
+    100% { color: $colorMax;}
+  }
+
+  @keyframes blink {
+    0% { color: $colorMax;}
+    10% {color: $colorMin;}
+    14% {color: $colorMax;}
+    18% {color: $colorMin;}
+    20% {color: $colorMax;}
+    50% { color: $colorMin;}
+    100% { color: $colorMax;}
+  }
+}

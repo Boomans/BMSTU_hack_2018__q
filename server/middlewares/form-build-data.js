@@ -15,6 +15,9 @@ module.exports = (req, res, next) => {
             bundles: {
                 styles: formPath('main', 'css', isProd),
                 scripts: formPath('main', 'js', isProd)
+            },
+            font: {
+                font1: '/build/res/fonts/copperplate.ttf'
             }
         }
     };

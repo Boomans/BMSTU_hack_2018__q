@@ -23,9 +23,7 @@ const app = express()
     .set('view engine', 'mustache')
     .set('views', __dirname + '/../client/pages/');
 
-if (!isProd) {
-    app.use('/build', express.static('build'));
-}
+app.use('/build', express.static('build'));
 
 app
     .get(paths, [formBuildData, buildPage])

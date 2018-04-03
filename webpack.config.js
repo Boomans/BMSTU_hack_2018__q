@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const isProd = process.env.NODE_ENV === 'production';
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 console.log(`Is Production: ${isProd}`);
 
@@ -58,11 +59,7 @@ module.exports = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            warnings: true,
-            compress: true,
-            minimize: true
-        })
+        new UglifyJsPlugin()
     ] : [
         new ExtractTextPlugin('[name].bundle.css'),
     ]

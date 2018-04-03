@@ -1,0 +1,19 @@
+@import "../../src/const/const";
+
+.button-container {
+  display: flex;
+  cursor: pointer;
+
+  &__content {
+    display: inline-block;
+    margin: auto;
+    &__text{
+      font-family: $font-family1;
+      color: $color1;
+    }
+
+    .text-uppercase{
+      text-transform: uppercase;
+    }
+  }
+}

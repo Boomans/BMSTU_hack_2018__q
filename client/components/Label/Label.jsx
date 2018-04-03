@@ -1,16 +1,22 @@
 import React from 'react';
+import getClassName from '../../utils/getClassName.js';
+
 import './label.scss';
 
 export default class Label extends React.Component {
     constructor(props) {
         super(props);
+        this._styles = {
+            'header': 'text-header',
+            'center': 'text-center'
+        };
     }
 
     render() {
         return (
             <div className='label-container'>
                 <div className='label-container__content'>
-                    <div className={`label-container__content__text ${Label._getClassName(this.props.type)}`}
+                    <div className={`label-container__content__text ${getClassName(this.props.type, this._styles)}`}
                          style={this.props.textStyle}
                          dangerouslySetInnerHTML={{__html: this.props.isBlink ? Label._formBlinkingText(this.props.text) : this.props.text}}>
                     </div>
@@ -27,19 +33,5 @@ export default class Label extends React.Component {
 
         split[rand] = `<o class='blink-container'>${split[rand]}</o>`;
         return split.join('');
-    }
-
-    static _getClassName(type) {
-        const args = type.split(' ');
-        const styles = {
-            'header': 'text-header',
-            'center': 'text-center',
-            'undefined': ''
-        };
-
-        return args.reduce((res, curr) => {
-            res += `${styles[curr]} `;
-            return res;
-        }, '');
     }
 }

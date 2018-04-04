@@ -1,6 +1,5 @@
 'use strict';
 const PORT = process.env.PORT || 8000;
-const {isProd} = require('./utils/utils');
 
 const express = require('express');
 const bodyParser = require('body-parser');

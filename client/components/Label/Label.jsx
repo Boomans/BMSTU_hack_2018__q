@@ -10,8 +10,10 @@ export default class Label extends React.Component {
             'header': 'text-header',
             'small-text': 'text-small',
             'midd-text': 'text-middle',
+            'big-text': 'text-big',
             'center': 'text-center',
             'margin-top-10': 'text-margin-top-10',
+            'margin-top-20': 'text-margin-top-20',
             'uppercase': 'text-uppercase'
         };
     }

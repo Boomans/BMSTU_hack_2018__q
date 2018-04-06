@@ -1,0 +1,60 @@
+@import "../../src/const/const";
+
+.member-container {
+  //flex-grow: 1;
+  //display: flex;
+  //
+  &__content {
+    margin: 0 auto;
+
+    .profile-container {
+
+      &__image {
+        display: flex;
+        margin-top: 100px;
+      }
+      img {
+        border-radius: 1000px;
+        margin: auto;
+      }
+
+      &__data {
+        margin-top: 50px;
+      }
+
+    }
+
+    .about-me-container {
+      margin-top: 200px;
+    }
+
+    .skills-container {
+      margin-top: 200px;
+
+      .skill-list {
+        display: flex;
+        margin-top: 100px;
+
+        &__content {
+          margin: auto;
+        }
+
+        .skill {
+          margin-top: 10px;
+
+          img {
+            border-radius: 50px;
+            padding: 7px;
+            display: inline-block;
+          }
+
+          &__text {
+            display: inline-block;
+            vertical-align: top;
+            margin: 10px;
+          }
+        }
+      }
+    }
+  }
+}

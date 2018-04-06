@@ -146,6 +146,7 @@ export default class Main extends React.Component {
     }
 
     _onWheel(e) {
+        if (window.debugE === 'debug') debugger
         if (this._isFirstRun) {
             const scrollOffset = Main._getScrollOffset();
             if (scrollOffset < this._windowSize) {

@@ -1,27 +1,159 @@
-@mixin anim-blink($colorMin, $colorMax, $time) {
+@mixin anim-blink-color($colorMin, $colorMax, $time, $blinkType) {
   .blink-container {
-    -webkit-animation: blink $time linear infinite;
-    animation: blink $time linear infinite;
+    -webkit-animation: #{'color-' + $blinkType} $time linear infinite;
+    animation: #{'color-' + $blinkType} $time linear infinite;
     color: $colorMax;
   }
 
-  @-webkit-keyframes blink {
-    0% { color: $colorMax;}
-    10% {color: $colorMin;}
-    14% {color: $colorMax;}
-    18% {color: $colorMin;}
-    20% {color: $colorMax;}
-    50% { color: $colorMin;}
-    100% { color: $colorMax;}
+  @-webkit-keyframes color-blink-drag {
+    0% {
+      color: $colorMax;
+    }
+    10% {
+      color: $colorMin;
+    }
+    14% {
+      color: $colorMax;
+    }
+    18% {
+      color: $colorMin;
+    }
+    20% {
+      color: $colorMax;
+    }
+    50% {
+      color: $colorMin;
+    }
+    100% {
+      color: $colorMax;
+    }
   }
 
-  @keyframes blink {
-    0% { color: $colorMax;}
-    10% {color: $colorMin;}
-    14% {color: $colorMax;}
-    18% {color: $colorMin;}
-    20% {color: $colorMax;}
-    50% { color: $colorMin;}
-    100% { color: $colorMax;}
+  @keyframes color-blink-drag {
+    0% {
+      color: $colorMax;
+    }
+    10% {
+      color: $colorMin;
+    }
+    14% {
+      color: $colorMax;
+    }
+    18% {
+      color: $colorMin;
+    }
+    20% {
+      color: $colorMax;
+    }
+    50% {
+      color: $colorMin;
+    }
+    100% {
+      color: $colorMax;
+    }
+  }
+
+  @-webkit-keyframes color-blink-linear {
+    0% {
+      color: $colorMax;
+    }
+    50% {
+      color: $colorMin;
+    }
+    100% {
+      color: $colorMax;
+    }
+  }
+
+  @keyframes color-blink-linear {
+    0% {
+      color: $colorMax;
+    }
+    50% {
+      color: $colorMin;
+    }
+    100% {
+      color: $colorMax;
+    }
+  }
+}
+
+@mixin anim-blink-background($colorMin, $colorMax, $time, $blinkType) {
+  .blink-container {
+    -webkit-animation: #{'background-' + $blinkType} $time linear infinite;
+    animation: #{'background-' + $blinkType} $time linear infinite;
+    color: $colorMax;
+  }
+
+  @-webkit-keyframes background-blink-drag {
+    0% {
+      background-color: $colorMax;
+    }
+    10% {
+      background-color: $colorMin;
+    }
+    14% {
+      background-color: $colorMax;
+    }
+    18% {
+      background-color: $colorMin;
+    }
+    20% {
+      background-color: $colorMax;
+    }
+    50% {
+      background-color: $colorMin;
+    }
+    100% {
+      background-color: $colorMax;
+    }
+  }
+
+  @keyframes background-blink-drag {
+    0% {
+      background-color: $colorMax;
+    }
+    10% {
+      background-color: $colorMin;
+    }
+    14% {
+      background-color: $colorMax;
+    }
+    18% {
+      background-color: $colorMin;
+    }
+    20% {
+      background-color: $colorMax;
+    }
+    50% {
+      background-color: $colorMin;
+    }
+    100% {
+      background-color: $colorMax;
+    }
+  }
+
+  @-webkit-keyframes background-blink-linear {
+    0% {
+      background-color: $colorMax;
+    }
+    50% {
+      background-color: $colorMin;
+    }
+    100% {
+      background-color: $colorMax;
+    }
+  }
+
+  @keyframes background-blink-linear {
+    0% {
+      background-color: $colorMax;
+    }
+    50% {
+      background-color: $colorMin;
+    }
+    100% {
+      background-color: $colorMax;
+    }
   }
 }

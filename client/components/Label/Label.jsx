@@ -8,13 +8,17 @@ export default class Label extends React.Component {
         super(props);
         this._styles = {
             'header': 'text-header',
-            'center': 'text-center'
+            'small-text': 'text-small',
+            'midd-text': 'text-middle',
+            'center': 'text-center',
+            'margin-top-10': 'text-margin-top-10',
+            'uppercase': 'text-uppercase'
         };
     }
 
     render() {
         return (
-            <div className='label-container'>
+            <div className='label-container' style={this.props.containerStyle}>
                 <div className='label-container__content'>
                     <div className={`label-container__content__text ${getClassName(this.props.type, this._styles)}`}
                          style={this.props.textStyle}

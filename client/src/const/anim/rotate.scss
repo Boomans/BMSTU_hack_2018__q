@@ -1,0 +1,36 @@
+@mixin anim-rotate-drag($name, $startDeg, $diff, $isRight, $time) {
+  @if $isRight == true {
+    $diff: $diff;
+  } @else {
+    $diff: -$diff;
+  }
+
+  .anim-rotate-container-drag__#{$name} {
+    -webkit-animation: rotate-drag__#{$name} $time linear infinite;
+    animation: rotate-drag__#{$name} $time linear infinite;
+  }
+
+  @-webkit-keyframes rotate-drag__#{$name} {
+    0% {
+      transform: rotate(($startDeg) + deg);
+    }
+    50% {
+      transform: rotate(($startDeg + $diff) + deg);
+    }
+    100% {
+      transform: rotate(($startDeg) + deg);
+    }
+  }
+
+  @keyframes rotate-drag__#{$name} {
+    0% {
+      transform: rotate(($startDeg) + deg);
+    }
+    50% {
+      transform: rotate(($startDeg + $diff) + deg);
+    }
+    100% {
+      transform: rotate(($startDeg) + deg);
+    }
+  }
+}

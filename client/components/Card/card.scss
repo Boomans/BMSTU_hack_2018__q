@@ -1,0 +1,25 @@
+@import "../../src/const/const";
+
+.card-container {
+  flex-grow: 1;
+  display: flex;
+
+  .clickable {
+    cursor: pointer;
+
+    &:hover {
+      .label-container__content__text {
+        @include transition(0.3s);
+        color: $color-star;
+      }
+    }
+  }
+
+  &__content {
+    margin: 0 auto;
+
+    img {
+      border-radius: 1000px;
+    }
+  }
+}

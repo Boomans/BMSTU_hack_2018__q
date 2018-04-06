@@ -2,7 +2,7 @@
 
 $timeMax: 10;
 $timeMin: 4;
-$max: 30;
+$max: 40;
 $size: 2px;
 
 @mixin printStars(){
@@ -43,7 +43,7 @@ $size: 2px;
 .stars-container {
   height: 100%;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
 

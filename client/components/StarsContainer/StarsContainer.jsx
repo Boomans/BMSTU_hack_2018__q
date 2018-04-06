@@ -40,6 +40,16 @@ export default class StarsContainer extends React.Component {
                 <div className='stars stars--28'/>
                 <div className='stars stars--29'/>
                 <div className='stars stars--30'/>
+                <div className='stars stars--31'/>
+                <div className='stars stars--32'/>
+                <div className='stars stars--33'/>
+                <div className='stars stars--34'/>
+                <div className='stars stars--35'/>
+                <div className='stars stars--36'/>
+                <div className='stars stars--37'/>
+                <div className='stars stars--38'/>
+                <div className='stars stars--39'/>
+                <div className='stars stars--40'/>
             </div>
         );
     }

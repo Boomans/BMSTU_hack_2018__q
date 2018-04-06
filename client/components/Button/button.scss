@@ -1,12 +1,25 @@
 @import "../../src/const/const";
+@import "../../src/const/anim/blink";
 
 .button-container {
   display: flex;
   cursor: pointer;
 
+  @include anim-blink-background($color2-light, $color2, 3s, 'blink-linear');
+
   &__content {
     display: inline-block;
     margin: auto;
+    border-radius: 38px;
+    background-color: $color2;
+    padding: 5px 60px;
+    @include transition(0.4s);
+
+    &:hover {
+      background-color: $color3;
+      animation: none;
+    }
+
     &__text{
       font-family: $font-family1;
       color: $color1;

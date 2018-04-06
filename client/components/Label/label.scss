@@ -5,20 +5,37 @@
 
   &__content {
 
+    @include anim-blink-color($color-transparent, $color1, 2s, 'blink-drag');
+
     &__text {
       font-family: $font-family1;
       color: $color1;
-
-      @include anim-blink($color-transparent, $color1, 2s);
     }
 
     .text-header {
       font-size: 15vh;
       text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .text-uppercase {
+      text-transform: uppercase;
+    }
+
+    .text-small {
+      font-size: 20px;
+    }
+
+    .text-middle {
+      font-size: 30px;
     }
 
     .text-center {
       text-align: center;
+    }
+
+    .text-margin-top-10 {
+      margin-top: 10px;
     }
   }
 }

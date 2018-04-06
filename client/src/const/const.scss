@@ -1,5 +1,19 @@
 $font-family1: Copperplate, sans-serif;
+$font-family2: Arial, sans-serif;
 
 $color-transparent: rgba(0, 0, 0, 0);
 $color1: #f4d4e1;
-$color-star: #8edcf4;
+$color2: #4f4581;
+$color2-light: #877ce3;
+$color3: #792149;
+
+$color-star: #c1eff4;
+
+$bg-color: #382540,#3a1321;
+
+@mixin transition($time) {
+  -webkit-transition: all $time linear 0s;
+  -moz-transition: all $time linear 0s;
+  -o-transition: all $time linear 0s;
+  transition: all $time linear 0s;
+}

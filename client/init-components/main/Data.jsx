@@ -4,7 +4,8 @@ export default {
         firstName: 'Артем',
         patronymic: 'Дмитриевич',
         aboutMe: [
-            'Учусь в МГТУ на ИУ5',
+            'Учусь в МГТУ им. Н.Э.Баумана на 3-ем курсе',
+            'Кафедры "Системы обработки информации и управления"',
             'Работаю в Mail.ru Group',
             'Люблю Swift & iOS'
         ],
@@ -31,26 +32,23 @@ export default {
         firstName: 'Денис',
         patronymic: 'Геннадьевич',
         aboutMe: [
-            'Учусь в МГТУ на ИУ5',
-            'Работаю в Mail.ru Group',
-            'Люблю Swift & iOS'
+            'Учусь в МГТУ им. Н.Э.Баумана на 3-ем курсе',
+            'Кафедры "Системы обработки информации и управления"',
+            'Работаю в Yandex',
+            'Уважаю JS и WEB-разработку'
+
         ],
         skills: [
             {
-                icon: 'taekwondo',
-                color: '#377ab3',
-                text: 'UI/UX design'
-            },
-            {
                 icon: 'judo',
-                color: '#8f2054',
-                text: 'SWIFT / Objective-C'
+                color: '#8f8f54',
+                text: 'JavaScript и все что с ним связано'
             },
             {
-                icon: 'kitesurfing',
-                color: '#508f95',
-                text: 'Python'
-            }
+                icon: 'taekwondo',
+                color: '#8f2054',
+                text: 'Могу пиздов дать'
+            },
         ]
     },
     Vladimir: {
@@ -58,19 +56,20 @@ export default {
         firstName: 'Владимир',
         patronymic: 'Витальевич',
         aboutMe: [
-            'Учусь в МГТУ им. Баумана на ИУ5',
-            'В основном занимаюсь Web разработкой',
-            'Прохожу основной курс Технопарк'
+            'Студент 3го курса МГТУ им. Н. Э. Баумана',
+            'Кафедры "Системы обработки информации и управления"',
+            'Учусь на первом семестре Технопарка',
+            'Люблю Python и Web-разработку'
         ],
         skills: [
             {
                 icon: 'kitesurfing',
-                color: '#377ab3',
+                color: '#508f95',
                 text: 'Web design'
             },
             {
                 icon: 'taekwondo',
-                color: '#508f95',
+                color: '#377ab3',
                 text: 'Python'
             },
             {
@@ -85,25 +84,25 @@ export default {
         firstName: 'Ильнур',
         patronymic: 'Ильшатович',
         aboutMe: [
-            'Учусь в МГТУ на ИУ5',
-            'Работаю в Mail.ru Group',
-            'Люблю Swift & iOS'
+            'Студент 3го курса МГТУ им. Н. Э. Баумана',
+            'Кафедры "Системы обработки информации и управления"',
+            'Учусь на первом семестре Технопарка'
         ],
         skills: [
             {
                 icon: 'taekwondo',
                 color: '#377ab3',
-                text: 'UI/UX design'
+                text: 'Python'
             },
             {
                 icon: 'judo',
                 color: '#8f2054',
-                text: 'SWIFT / Objective-C'
+                text: 'C++'
             },
             {
                 icon: 'kitesurfing',
                 color: '#508f95',
-                text: 'Python'
+                text: 'Могу словить проебушков'
             }
         ]
     }

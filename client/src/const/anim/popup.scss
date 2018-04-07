@@ -1,0 +1,97 @@
+@mixin anim-open-popup-window($time) {
+  &_open {
+    -webkit-animation: open-popup-window $time linear;
+    animation: open-popup-window $time linear;
+  }
+
+  @-webkit-keyframes open-popup-window {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes open-popup-window {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  &_close {
+    -webkit-animation: close-popup-window $time linear;
+    animation: close-popup-window $time linear;
+    }
+
+  @-webkit-keyframes close-popup-window {
+    0% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes close-popup-window {
+    0% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 0.5;
+    }
+    80% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin anim-slide-content($time, $left) {
+  &__container {
+    -webkit-animation: slide-content $time ease;
+    animation: slide-content $time ease;
+    position: relative;
+  }
+
+  @-webkit-keyframes slide-content {
+    from {
+      left: $left;
+    }
+    to {
+      left: 0;
+    }
+  }
+
+  @keyframes slide-content {
+    from {
+      left: $left;
+    }
+    to {
+      left: 0;
+    }
+  }
+}

@@ -68,7 +68,7 @@ export default class Member extends React.Component {
                                                     <img
                                                         src={`/build/res/img/skills-icons/white/icons8-${skill.icon}.png`}
                                                         alt=""
-                                                        style={{backgroundColor: skill.color}}
+                                                        style={{background: skill.color}}
                                                         width={this._iconSize}
                                                         height={this._iconSize}
                                                     />

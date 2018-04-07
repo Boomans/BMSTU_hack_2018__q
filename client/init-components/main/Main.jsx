@@ -34,17 +34,19 @@ export default class Main extends React.Component {
             scrolling: false
         };
 
-        this._memberContainer = undefined;
+        // this._memberContainer = undefined;
     }
 
     componentDidMount() {
         this._memberContainer = document.getElementById('member-container');
+        this._elementSelectedMember = document.getElementById('selected-member');
+        this._elementBody = document.getElementsByTagName('body')[0];
     }
 
     render() {
         return (
             <div className='main-container'>
-                <div className='main-container__content' onWheel={this._onWheel}>
+                <div className='main-container__content' id='main-container-content' onWheel={this._onWheel}>
                     <StarsContainer/>
                     <div className='head-container container-1'>
                         <div className='head-container__content'>
@@ -128,7 +130,7 @@ export default class Main extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className='selected-member'>
+                <div className='selected-member' id='selected-member'>
                     <div className='button-close-container'>
                         <div className='button-close-container__content'>
                             <Button img='/build/res/img/cross.png' imgSize={[30, 30]}
@@ -136,7 +138,7 @@ export default class Main extends React.Component {
                         </div>
                     </div>
                     <div className='selected-member__content'>
-                        <div id='member-container'></div>
+                        <div className='selected-member__content__container' id='member-container'></div>
                     </div>
                 </div>
             </div>
@@ -218,13 +220,23 @@ export default class Main extends React.Component {
                 />,
                 this._memberContainer
             );
-            $('.selected-member').css('display', 'flex');
-            $('body').css('overflow', 'hidden');
+            this._elementSelectedMember.style.display = 'flex';
+
+            this._elementSelectedMember.classList.remove('selected-member_close');
+            this._elementSelectedMember.classList.add('selected-member_open');
+
+            this._elementBody.style.overflowY = 'hidden';
         }
     }
 
     _unmountMember() {
-        $('.selected-member').css('display', 'none');
-        $('body').css('overflow', 'visible');
+        this._elementSelectedMember.classList.remove('selected-member_open');
+        this._elementSelectedMember.classList.add('selected-member_close');
+        setTimeout(() => {
+                this._elementSelectedMember.style.display = 'none';
+
+                this._elementBody.style.overflowY = 'visible';
+            },
+            1000);
     }
 }

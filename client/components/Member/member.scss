@@ -7,14 +7,8 @@
     margin: 0 auto;
 
     .profile-container {
-
-      &__image {
-        display: flex;
+      .profile-container__card {
         margin-top: 100px;
-      }
-      img {
-        border-radius: 1000px;
-        margin: auto;
       }
 
       &__data {

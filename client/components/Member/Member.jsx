@@ -1,6 +1,7 @@
 import React from 'react';
 import Title from '../../components/Title/Title.jsx';
 import Label from '../../components/Label/Label.jsx';
+import Card from '../../components/Card/Card.jsx';
 
 import './member.scss';
 
@@ -20,11 +21,11 @@ export default class Member extends React.Component {
             <div className='member-container' style={this.props.containerStyle}>
                 <div className='member-container__content'>
                     <div className='profile-container container-1'>
-                        <div className='profile-container__image'>
-                            <img src={this.props.img} width={this._imgWidth} height={this._imgHeight}/>
-                        </div>
-                        <div className='profile-container__name'>
-                            <Label text={this.props.name} type='uppercase big-text center margin-top-20'/>
+                        <div className='profile-container__card'>
+                            <Card
+                                img={this.props.img}
+                                imgSize={[this._imgWidth, this._imgHeight]}
+                                content={<Label text={this.props.name} type='uppercase big-text center margin-top-20'/>}/>
                         </div>
                         <div className='profile-container__data'>
                             <div className='profile-container__data__last-name'>
@@ -83,13 +84,6 @@ export default class Member extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/*<div className='button-prev-container'>*/}
-                {/*<div className='button-prev-container__content'>*/}
-                {/*<Button img='/build/res/img/cross.png' imgSize={[30, 30]}*/}
-                {/*onClick={()=>{this.props.turnToLanding()}}/>*/}
-                {/*</div>*/}
-                {/*</div>*/}
-
             </div>
         );
     }

@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Landing from '../../components/Landing/Landing.jsx'
 import StarsContainer from '../../components/StarsContainer/StarsContainer.jsx';
 import Member from '../../components/Member/Member.jsx';
+import Label from '../../components/Label/Label.jsx';
+import Title from '../../components/Title/Title.jsx';
+import Button from '../../components/Button/Button.jsx';
+import Card from '../../components/Card/Card.jsx';
 import $ from 'jquery';
+import MembersData from './Data.jsx'
 
 import './main.scss';
 
@@ -14,11 +18,15 @@ export default class Main extends React.Component {
         this._nextContainerClickHandler = this._nextContainerClickHandler.bind(this);
         this._prevContainerClickHandler = this._prevContainerClickHandler.bind(this);
         this._onWheel = this._onWheel.bind(this);
-        this._renderLanding = this._renderLanding.bind(this);
         this._renderMember = this._renderMember.bind(this);
+        this._unmountMember = this._unmountMember.bind(this);
 
         this._windowSize = $(window).height();
         this._isFirstRun = true;
+
+        this._buttonFontSize = 25;
+        this._titleMarginTop = 35;
+        this._cardImgSize = 200;
 
         this._scrollData = {
             prevNum: -1,
@@ -26,66 +34,110 @@ export default class Main extends React.Component {
             scrolling: false
         };
 
-        this._membersData = {
-            Artem: {
-                lastName: 'Белков',
-                firstName: 'Артем',
-                patronymic: 'Дмитриевич',
-                aboutMe: [
-                    'Учусь в МГТУ на ИУ5',
-                    'Работаю в Mail.ru Group',
-                    'Люблю Swift & iOS'
-                ],
-                skills: [
-                    {
-                        icon: 'taekwondo',
-                        color: '#377ab3',
-                        text: 'UI/UX design'
-                    },
-                    {
-                        icon: 'judo',
-                        color: '#8f2054',
-                        text: 'SWIFT / Objective-C'
-                    },
-                    {
-                        icon: 'kitesurfing',
-                        color: '#508f95',
-                        text: 'Python'
-                    }
-                ]
-            },
-            Denis: {
-                lastName: 'Степанов',
-                firstName: 'Денис',
-                patronymic: 'Геннадьевич'
-            },
-            Vladimir: {
-                lastName: 'Атаманов',
-                firstName: 'Владимир',
-                patronymic: 'Витальевич'
-            },
-            Ilnur: {
-                lastName: 'Гатаулин',
-                firstName: 'Ильнур',
-                patronymic: 'Ильшатович'
-            }
-        };
-
-        this._contentContainer = undefined;
+        this._memberContainer = undefined;
     }
 
     componentDidMount() {
-        this._contentContainer = document.getElementById('content-container');
-        this._renderLanding();
+        this._memberContainer = document.getElementById('member-container');
     }
 
     render() {
         return (
-            <div className='main-container' onWheel={this._onWheel}>
-                <StarsContainer/>
-                <div id='content-container' className='main-container__content'>
-                    {/*<Landing chooseMember={this._chooseMember}/>*/}
+            <div className='main-container'>
+                <div className='main-container__content' onWheel={this._onWheel}>
+                    <StarsContainer/>
+                    <div className='head-container container-1'>
+                        <div className='head-container__content'>
+                            <div className='text-container'>
+                                <Label text='boomans' type='header center' isBlink={true}/>
+                            </div>
+                            <div className='triangle-container'>
+                                <img src='/build/res/img/triangle.png'/>
+                            </div>
+                            <div className='button-next-container'>
+                                <div className='button-next-container__content'>
+                                    <Button text='more' type='uppercase' textStyle={{
+                                        fontSize: this._buttonFontSize
+                                    }} onClick={this._nextContainerClickHandler}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='principles-container container-2'>
+                        <div className='principles-container__content'>
+                            <Title text='our principles' type='center' containerStyle={{
+                                marginTop: this._titleMarginTop
+                            }}/>
 
+                            {
+                                ['we are using space technologies', 'smth', 'smth', 'smth'].map((text, i) => {
+                                    return (<Label key={`principles-text-${i}`} text={text} type='midd-text center'
+                                                   containerStyle={{
+                                                       marginTop: i === 0 ? 100 : 10
+                                                   }}/>);
+                                })
+                            }
+
+                            <div className='button-next-container'>
+                                <div className='button-next-container__content'>
+                                    <Button text='more' type='uppercase' textStyle={{
+                                        fontSize: this._buttonFontSize
+                                    }} onClick={this._nextContainerClickHandler}/>
+                                </div>
+                            </div>
+                            <div className='button-prev-container'>
+                                <div className='button-prev-container__content'>
+                                    <Button img='/build/res/img/up-arrow.png' imgSize={[30, 30]}
+                                            onClick={this._prevContainerClickHandler}/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='team-container container-3'>
+                        <div className='team-container__content'>
+                            <Title text='team' type='center' containerStyle={{
+                                marginTop: this._titleMarginTop
+                            }}/>
+
+                            <div className='team-container__cards'>
+                                {
+                                    ['Artem', 'Denis', 'Vladimir', 'Ilnur'].map((name, i) => {
+                                        return (<Card onClick={() => {
+                                            this._renderMember(name)
+                                        }}
+                                                      key={`key-team-card-${i}`}
+                                                      img={`/build/res/img/avatars/fade/${name}.jpg`}
+                                                      imgSize={[this._cardImgSize, this._cardImgSize]}
+                                                      content={<Label text={name}
+                                                                      type='uppercase midd-text center margin-top-10'/>}/>);
+                                    })
+                                }
+                            </div>
+                            <div className='button-prev-container'>
+                                <div className='button-prev-container__content'>
+                                    <Button img='/build/res/img/up-arrow.png' imgSize={[30, 30]}
+                                            onClick={this._prevContainerClickHandler}/>
+                                </div>
+                            </div>
+
+                            <div className='frame-container'>
+                                <div className='frame-container__content'>
+                                    <img src='/build/res/img/frame.png'/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='selected-member'>
+                    <div className='button-close-container'>
+                        <div className='button-close-container__content'>
+                            <Button img='/build/res/img/cross.png' imgSize={[30, 30]}
+                                    onClick={this._unmountMember}/>
+                        </div>
+                    </div>
+                    <div className='selected-member__content'>
+                        <div id='member-container'></div>
+                    </div>
                 </div>
             </div>
         );
@@ -155,29 +207,24 @@ export default class Main extends React.Component {
     }
 
     _renderMember(name) {
-        if (this._contentContainer !== undefined) {
-            this._scrollData.num = 1;
-            ReactDOM.unmountComponentAtNode(this._contentContainer);
+        if (this._memberContainer !== undefined) {
+            ReactDOM.unmountComponentAtNode(this._memberContainer);
             ReactDOM.render(
                 <Member
-                    turnToLanding={this._renderLanding}
                     img={`/build/res/img/avatars/fade/${name}.jpg`}
                     imgSize={[this._cardImgSize, this._cardImgSize]}
                     name={name}
-                    data={this._membersData[name]}
+                    data={MembersData[name]}
                 />,
-                this._contentContainer
+                this._memberContainer
             );
+            $('.selected-member').css('display', 'flex');
+            $('body').css('overflow', 'hidden');
         }
     }
 
-    _renderLanding() {
-        if (this._contentContainer !== undefined) {
-            ReactDOM.unmountComponentAtNode(this._contentContainer);
-            ReactDOM.render(
-                <Landing turnToMember={this._renderMember}/>,
-                this._contentContainer
-            );
-        }
+    _unmountMember() {
+        $('.selected-member').css('display', 'none');
+        $('body').css('overflow', 'visible');
     }
 }

@@ -1,13 +1,13 @@
 export default {
     Artem: {
-        lastName: 'Белков',
-        firstName: 'Артем',
-        patronymic: 'Дмитриевич',
+        lastName: 'Belkov',
+        firstName: 'Artem',
+        patronymic: 'Dmitrievich',
         aboutMe: [
-            'Учусь в МГТУ им. Н.Э.Баумана на 3-ем курсе',
-            'Кафедры "Системы обработки информации и управления"',
-            'Работаю в Mail.ru Group',
-            'Люблю Swift & iOS'
+            'I study at the Moscow State Technical University named after Bauman in the 3rd year',
+            'Faculty "Information processing and management systems"',
+            'I work in Mail.ru Group',
+            'Love Swift & iOS'
         ],
         skills: [
             {
@@ -28,21 +28,21 @@ export default {
         ]
     },
     Denis: {
-        lastName: 'Степанов',
-        firstName: 'Денис',
-        patronymic: 'Геннадьевич',
+        lastName: 'Stepanov',
+        firstName: 'Denis',
+        patronymic: 'Gennadievich',
         aboutMe: [
-            'Учусь в МГТУ им. Н.Э.Баумана на 3-ем курсе',
-            'Кафедры "Системы обработки информации и управления"',
-            'Работаю в Yandex',
-            'Уважаю JS и WEB-разработку'
+            'I study at the Moscow State Technical University named after Bauman in the 3rd year',
+            'Faculty "Information processing and management systems"',
+            'I work in Mail.ru Group',
+            'Respect JS и WEB-development'
 
         ],
         skills: [
             {
                 icon: 'judo',
                 color: '#8f8f54',
-                text: 'JavaScript и все что с ним связано'
+                text: 'JavaScript and everything associated with it'
             },
             {
                 icon: 'taekwondo',
@@ -52,14 +52,14 @@ export default {
         ]
     },
     Vladimir: {
-        lastName: 'Атаманов',
-        firstName: 'Владимир',
-        patronymic: 'Витальевич',
+        lastName: 'Atamanov',
+        firstName: 'Vladimir',
+        patronymic: 'Vitalievich',
         aboutMe: [
-            'Студент 3го курса МГТУ им. Н. Э. Баумана',
-            'Кафедры "Системы обработки информации и управления"',
-            'Учусь на первом семестре Технопарка',
-            'Люблю Python и Web-разработку'
+            'A third-year student of Moscow State Technical University named after Bauman',
+            'Faculty "Information processing and management systems"',
+            'I study at the first semester of Technopark',
+            'Love Python и Web-development'
         ],
         skills: [
             {
@@ -80,13 +80,13 @@ export default {
         ]
     },
     Ilnur: {
-        lastName: 'Гатаулин',
-        firstName: 'Ильнур',
-        patronymic: 'Ильшатович',
+        lastName: 'Gataullin',
+        firstName: 'Ilnur',
+        patronymic: 'Ilshatovich',
         aboutMe: [
-            'Студент 3го курса МГТУ им. Н. Э. Баумана',
-            'Кафедры "Системы обработки информации и управления"',
-            'Учусь на первом семестре Технопарка'
+            'A third-year student of Moscow State Technical University named after Bauman',
+            'Faculty "Information processing and management systems"',
+            'I study at the first semester of Technopark'
         ],
         skills: [
             {

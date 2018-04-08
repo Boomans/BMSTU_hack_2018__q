@@ -47,7 +47,7 @@ export default {
             {
                 icon: 'taekwondo',
                 color: '#8f2054',
-                text: 'Могу пиздов дать'
+                text: 'Python'
             },
         ]
     },
@@ -90,7 +90,7 @@ export default {
         ],
         skills: [
             {
-                icon: 'taekwondo',
+                icon: 'kitesurfing',
                 color: '#377ab3',
                 text: 'Python'
             },
@@ -98,11 +98,6 @@ export default {
                 icon: 'judo',
                 color: '#8f2054',
                 text: 'C++'
-            },
-            {
-                icon: 'kitesurfing',
-                color: '#508f95',
-                text: 'Могу словить проебушков'
             }
         ]
     }

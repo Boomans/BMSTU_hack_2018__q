@@ -72,7 +72,12 @@ export default class Main extends React.Component {
                             }}/>
 
                             {
-                                ['we are using space technologies', 'smth', 'smth', 'smth'].map((text, i) => {
+                                [
+                                    'we are using space technologies',
+                                    'respect any kind of development',
+                                    'we constantly take part in various hackathons',
+                                    'strive for victory'
+                                ].map((text, i) => {
                                     return (<Label key={`principles-text-${i}`} text={text} type='midd-text center'
                                                    containerStyle={{
                                                        marginTop: i === 0 ? 100 : 10
@@ -138,7 +143,7 @@ export default class Main extends React.Component {
                         </div>
                     </div>
                     <div className='selected-member__content'>
-                        <div className='selected-member__content__container' id='member-container'></div>
+                        <div className='selected-member__content__container' id='member-container'/>
                     </div>
                 </div>
             </div>

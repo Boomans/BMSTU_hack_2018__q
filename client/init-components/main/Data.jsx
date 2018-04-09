@@ -34,7 +34,7 @@ export default {
         aboutMe: [
             'I study at the Moscow State Technical University named after Bauman in the 3rd year',
             'Faculty "Information processing and management systems"',
-            'I work in Mail.ru Group',
+            'I work in Yandex',
             'Respect JS и WEB-development'
 
         ],

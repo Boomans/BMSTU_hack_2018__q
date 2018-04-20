@@ -35,7 +35,7 @@ export default {
             'I study at the Moscow State Technical University named after Bauman in the 3rd year',
             'Faculty "Information processing and management systems"',
             'I work in Yandex',
-            'Respect JS и WEB-development'
+            'Respect JS & WEB-development'
 
         ],
         skills: [
@@ -59,7 +59,7 @@ export default {
             'A third-year student of Moscow State Technical University named after Bauman',
             'Faculty "Information processing and management systems"',
             'I study at the first semester of Technopark',
-            'Love Python и Web-development'
+            'Love Python & Web-development'
         ],
         skills: [
             {
